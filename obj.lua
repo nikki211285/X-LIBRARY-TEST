@@ -1,4 +1,4 @@
-local Release = "XLibrary-Beta 1.0.1"
+local Release = "XLibrary-Beta 1"
 local NotificationDuration = 5
 local XLibraryFolder = "XLibrary"
 local ConfigurationFolder = XLibraryFolder .. "/Configurations"
