@@ -5,49 +5,49 @@ local ConfigurationFolder = XLibraryFolder .. "/Configurations"
 local ConfigurationExtension = ".cxlb"
 
 local XLibrary = {
-    Flags = {},
-    Theme = {
-        Default = {
-            TextFont = "Default",
-            TextColor = Color3.fromRGB(240, 240, 240),
+	Flags = {},
+	Theme = {
+		Default = {
+			TextFont = "Default",
+			TextColor = Color3.fromRGB(240, 240, 240),
 
-            Background = Color3.fromRGB(25, 25, 25),
-            Topbar = Color3.fromRGB(34, 34, 34),
-            Shadow = Color3.fromRGB(20, 20, 20),
+			Background = Color3.fromRGB(25, 25, 25),
+			Topbar = Color3.fromRGB(34, 34, 34),
+			Shadow = Color3.fromRGB(20, 20, 20),
 
-            NotificationBackground = Color3.fromRGB(20, 20, 20),
-            NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
+			NotificationBackground = Color3.fromRGB(20, 20, 20),
+			NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
 
-            TabBackground = Color3.fromRGB(80, 80, 80),
-            TabStroke = Color3.fromRGB(85, 85, 85),
-            TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
-            TabTextColor = Color3.fromRGB(240, 240, 240),
-            SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
+			TabBackground = Color3.fromRGB(80, 80, 80),
+			TabStroke = Color3.fromRGB(85, 85, 85),
+			TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
+			TabTextColor = Color3.fromRGB(240, 240, 240),
+			SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
 
-            ElementBackground = Color3.fromRGB(35, 35, 35),
-            ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-            SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
+			ElementBackground = Color3.fromRGB(35, 35, 35),
+			ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
+			SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
 
-            SliderBackground = Color3.fromRGB(43, 105, 159),
-            SliderProgress = Color3.fromRGB(43, 105, 159),
-            SliderStroke = Color3.fromRGB(48, 119, 177),
+			SliderBackground = Color3.fromRGB(43, 105, 159),
+			SliderProgress = Color3.fromRGB(43, 105, 159),
+			SliderStroke = Color3.fromRGB(48, 119, 177),
 
-            ToggleBackground = Color3.fromRGB(30, 30, 30),
-            ToggleEnabled = Color3.fromRGB(0, 146, 214),
-            ToggleDisabled = Color3.fromRGB(100, 100, 100),
-            ToggleEnabledStroke = Color3.fromRGB(0, 170, 255),
-            ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
-            ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
-            ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
+			ToggleBackground = Color3.fromRGB(30, 30, 30),
+			ToggleEnabled = Color3.fromRGB(0, 146, 214),
+			ToggleDisabled = Color3.fromRGB(100, 100, 100),
+			ToggleEnabledStroke = Color3.fromRGB(0, 170, 255),
+			ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
+			ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
+			ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
 
-            InputBackground = Color3.fromRGB(30, 30, 30),
-            InputStroke = Color3.fromRGB(65, 65, 65),
-            PlaceholderColor = Color3.fromRGB(178, 178, 178)
-        },
-        Light = {
+			InputBackground = Color3.fromRGB(30, 30, 30),
+			InputStroke = Color3.fromRGB(65, 65, 65),
+			PlaceholderColor = Color3.fromRGB(178, 178, 178)
+		},
+		Light = {
 			TextFont = "Gotham",
 			TextColor = Color3.fromRGB(50, 50, 50),
-			
+
 			Background = Color3.fromRGB(255, 255, 255),
 			Topbar = Color3.fromRGB(217, 217, 217),
 			Shadow = Color3.fromRGB(223, 223, 223),
@@ -60,7 +60,7 @@ local XLibrary = {
 			TabBackgroundSelected = Color3.fromRGB(0, 142, 208),
 			TabTextColor = Color3.fromRGB(240, 240, 240),
 			SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
-		
+
 			ElementBackground = Color3.fromRGB(198, 198, 198),
 			ElementBackgroundHover = Color3.fromRGB(230, 230, 230),
 			SecondaryElementBackground = Color3.fromRGB(136, 136, 136),
@@ -83,7 +83,7 @@ local XLibrary = {
 			InputStroke = Color3.fromRGB(19, 65, 31),
 			PlaceholderColor = Color3.fromRGB(178, 178, 178)
 		}
-    }
+	}
 }
 
 -- // Services
@@ -96,33 +96,33 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 
 -- // Interface Management
-local XInterface = game:GetObjects("rbxassetid://11565204080")[1]
+local XInterface = game:GetObjects("rbxassetid://12452128265")[1]
 
 if gethui then
-    XInterface.Parent = gethui()
+	XInterface.Parent = gethui()
 elseif syn.protect_gui then
-    syn.protect_gui(XInterface)
-    XInterface.Parent = CoreGui
+	syn.protect_gui(XInterface)
+	XInterface.Parent = CoreGui
 elseif CoreGui:FindFirstChild("RobloxGui") then
-    XInterface.Parent = CoreGui:FindFirstChild("RobloxGui")
+	XInterface.Parent = CoreGui:FindFirstChild("RobloxGui")
 else
-    XInterface.Parent = CoreGui
+	XInterface.Parent = CoreGui
 end
 
 if gethui then
-    for _, Interface in ipairs(gethui():GetChildren()) do
-        if Interface.Name == XInterface.Name and Interface ~= XInterface then
-            Interface.Enabled = false
-            Interface.Name = "XLibrary-OUTDATED"
-        end
-    end
+	for _, Interface in ipairs(gethui():GetChildren()) do
+		if Interface.Name == XInterface.Name and Interface ~= XInterface then
+			Interface.Enabled = false
+			Interface.Name = "XLibrary-OUTDATED"
+		end
+	end
 else
-    for _, Interface in ipairs(CoreGui:GetChildren()) do
-        if Interface.Name == XInterface.Name and Interface ~= XInterface then
-            Interface.Enabled = false
-            Interface.Name = "XLibrary-OUTDATED"
-        end
-    end
+	for _, Interface in ipairs(CoreGui:GetChildren()) do
+		if Interface.Name == XInterface.Name and Interface ~= XInterface then
+			Interface.Enabled = false
+			Interface.Name = "XLibrary-OUTDATED"
+		end
+	end
 end
 
 -- // Object Variables
@@ -150,26 +150,26 @@ local Notifications = XInterface.Notifications
 local SelectedTheme = XLibrary.Theme.Default
 
 function ChangeTheme(ThemeName)
-    SelectedTheme = XLibrary.Theme[ThemeName]
-    for _, obj in ipairs(XInterface:GetDescendants()) do
-        if obj:IsA("TextLabel") or obj:IsA("TextBox") or obj:IsA("TextButton") then
-            if SelectedTheme.TextFont ~= "Default" then
-                obj.TextColor3 = SelectedTheme.TextColor
-                obj.Font = SelectedTheme.TextFont
-            end
-        end
-    end
+	SelectedTheme = XLibrary.Theme[ThemeName]
+	for _, obj in ipairs(XInterface:GetDescendants()) do
+		if obj:IsA("TextLabel") or obj:IsA("TextBox") or obj:IsA("TextButton") then
+			if SelectedTheme.TextFont ~= "Default" then
+				obj.TextColor3 = SelectedTheme.TextColor
+				obj.Font = SelectedTheme.TextFont
+			end
+		end
+	end
 
-    Main.BackgroundColor3 = SelectedTheme.Background
-    Topbar.BackgroundColor3 = SelectedTheme.Topbar
-    Topbar.CornerRepair.BackgroundColor3 = SelectedTheme.Topbar
-    Main.Shadow.Image.ImageColor3 = SelectedTheme.Shadow
+	Main.BackgroundColor3 = SelectedTheme.Background
+	Topbar.BackgroundColor3 = SelectedTheme.Topbar
+	Topbar.CornerRepair.BackgroundColor3 = SelectedTheme.Topbar
+	Main.Shadow.Image.ImageColor3 = SelectedTheme.Shadow
 
 
-    XInterface.Main.Topbar.ChangeSize.ImageColor3 = SelectedTheme.TextColor
+	XInterface.Main.Topbar.ChangeSize.ImageColor3 = SelectedTheme.TextColor
 	XInterface.Main.Topbar.Hide.ImageColor3 = SelectedTheme.TextColor
 	XInterface.Main.Topbar.Theme.ImageColor3 = SelectedTheme.TextColor
-	
+
 	for _, TabPage in ipairs(Elements:GetChildren()) do
 		for _, Element in ipairs(TabPage:GetChildren()) do
 			if Element.ClassName == "Frame" and Element.Name ~= "Placeholder" and Element.Name ~= "SectionSpacing" and Element.Name ~= "SectionTitle"  then
@@ -211,11 +211,11 @@ local function AddDraggingFunctionality(DragPoint, Main)
 end   
 
 local function PackColor(Color)
-    return {R = Color.R * 255, G = Color.G * 255, B = Color.B * 255}
+	return {R = Color.R * 255, G = Color.G * 255, B = Color.B * 255}
 end
 
 local function UnpackColor(Color)
-    return Color3.fromRGB(Color.R, Color.G, Color.B)
+	return Color3.fromRGB(Color.R, Color.G, Color.B)
 end
 
 local function LoadConfiguration(Configuration)
@@ -469,7 +469,7 @@ local neon = (function()
 end)()
 
 function XLibrary:Notify(NotificationSettings)
-    spawn(function()
+	spawn(function()
 		local ActionCompleted = true
 		local Notification = Notifications.Template:Clone()
 		Notification.Parent = Notifications
@@ -486,9 +486,9 @@ function XLibrary:Notify(NotificationSettings)
 			blurlight.NearIntensity = 1
 			game:GetService("Debris"):AddItem(script,0)
 		end
-		
+
 		Notification.Actions.Template.Visible = false
-		
+
 		if NotificationSettings.Actions then
 			for _, Action in pairs(NotificationSettings.Actions) do
 				ActionCompleted = false
@@ -504,7 +504,7 @@ function XLibrary:Notify(NotificationSettings)
 				NewAction.BackgroundTransparency = 1
 				NewAction.TextTransparency = 1
 				NewAction.Size = UDim2.new(0, NewAction.TextBounds.X + 27, 0, 36)
-				
+
 				NewAction.MouseButton1Click:Connect(function()
 					local Success, Response = pcall(Action.Callback)
 					if not Success then
@@ -533,7 +533,7 @@ function XLibrary:Notify(NotificationSettings)
 		Notification.Parent = Notifications
 		Notification.Size = UDim2.new(0, 260, 0, 80)
 		Notification.BackgroundTransparency = 1
-		
+
 		TweenService:Create(Notification, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 295, 0, 91)}):Play()
 		TweenService:Create(Notification, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.1}):Play()
 		Notification:TweenPosition(UDim2.new(0.5,0,0.915,0),'Out','Quint',0.8,true)
@@ -563,7 +563,7 @@ function XLibrary:Notify(NotificationSettings)
 				BrickColor = BrickColor.new("Institutional white");
 			})
 		end
-		
+
 		if not NotificationSettings.Actions then
 			wait(NotificationSettings.Duration or NotificationDuration - 0.5)
 		else
@@ -578,7 +578,7 @@ function XLibrary:Notify(NotificationSettings)
 				end
 			end
 		end
-		
+
 		repeat wait(0.001) until ActionCompleted
 
 		for _, Action in ipairs(Notification.Actions:GetChildren()) do
@@ -700,7 +700,7 @@ function Unhide()
 				TweenService:Create(tabbtn.Title, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {TextTransparency = 0.2}):Play()
 				TweenService:Create(tabbtn.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 			end
-			
+
 		end
 	end
 	for _, tab in ipairs(Elements:GetChildren()) do
@@ -787,7 +787,7 @@ function Maximise()
 				TweenService:Create(tabbtn.Title, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {TextTransparency = 0.2}):Play()
 				TweenService:Create(tabbtn.UIStroke, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 			end
-			
+
 		end
 	end
 
@@ -850,7 +850,7 @@ function Minimise()
 end
 
 function XLibrary:CreateWindow(Settings)
-    local Passthrough = false
+	local Passthrough = false
 	Topbar.Title.Text = Settings.Name
 	Main.Size = UDim2.new(0, 450, 0, 260)
 	Main.Visible = true
@@ -867,14 +867,14 @@ function XLibrary:CreateWindow(Settings)
 	Topbar.Visible = false
 	Elements.Visible = false
 	LoadingFrame.Visible = true
-	
-	
+
+
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
 			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
 		end
 		if not isfolder(XLibraryFolder.."/".."Configuration Folders") then
-			
+
 		end
 		if Settings.ConfigurationSaving.Enabled == nil then
 			Settings.ConfigurationSaving.Enabled = false
@@ -901,7 +901,7 @@ function XLibrary:CreateWindow(Settings)
 			TabButton.UIStroke.Transparency = 1
 		end
 	end
-	
+
 	if Settings.Discord then
 		if not isfolder(XLibraryFolder.."/Discord Invites") then
 			makefolder(XLibraryFolder.."/Discord Invites")
@@ -922,12 +922,12 @@ function XLibrary:CreateWindow(Settings)
 					})
 				})
 			end
-			
+
 			if Settings.Discord.RememberJoins then -- We do logic this way so if the developer changes this setting, the user still won't be prompted, only new users
 				writefile(XLibraryFolder.."/Discord Invites".."/"..Settings.Discord.Invite..ConfigurationExtension,"XLibrary RememberJoins is true for this invite, this invite will not ask you to join again")
 			end
 		else
-			
+
 		end
 	end
 
@@ -936,11 +936,11 @@ function XLibrary:CreateWindow(Settings)
 			Passthrough = true
 			return
 		end
-		
+
 		if not isfolder(XLibraryFolder.."/Key System") then
 			makefolder(XLibraryFolder.."/Key System")
 		end
-		
+
 		if Settings.KeySettings.GrabKeyFromSite then
 			local Success, Response = pcall(function()
 				Settings.KeySettings.Key = game:HttpGet(Settings.KeySettings.Key)
@@ -949,7 +949,7 @@ function XLibrary:CreateWindow(Settings)
 				print("XLibrary | "..Settings.KeySettings.Key.." Error " ..tostring(Response))
 			end
 		end
-		
+
 		if not Settings.KeySettings.FileName then
 			Settings.KeySettings.FileName = "No file name specified"
 		end
@@ -959,11 +959,11 @@ function XLibrary:CreateWindow(Settings)
 				Passthrough = true
 			end
 		end
-		
+
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2,6)
 			XLibrary.Enabled = false
-			local KeyUI = game:GetObjects("rbxassetid://11380036235")[1]
+			local KeyUI = game:GetObjects("rbxassetid://12452179424")[1]
 
 			if gethui then
 				KeyUI.Parent = gethui()
@@ -1102,7 +1102,7 @@ function XLibrary:CreateWindow(Settings)
 	if Settings.KeySystem then
 		repeat wait() until Passthrough
 	end
-	
+
 	Notifications.Template.Visible = false
 	Notifications.Visible = true
 	XLibrary.Enabled = true
@@ -1133,7 +1133,7 @@ function XLibrary:CreateWindow(Settings)
 		TabButton.Parent = TabList
 		TabButton.Title.TextWrapped = false
 		TabButton.Size = UDim2.new(0, TabButton.Title.TextBounds.X + 30, 0, 30)
-		
+
 		if Image then
 			TabButton.Title.AnchorPoint = Vector2.new(0, 0.5)
 			TabButton.Title.Position = UDim2.new(0, 37, 0.5, 0)
@@ -1170,7 +1170,7 @@ function XLibrary:CreateWindow(Settings)
 			Elements.UIPageLayout:JumpTo(TabPage)
 			Elements.UIPageLayout.Animated = true
 		end
-		
+
 		if SelectedTheme ~= XLibrary.Theme.Default then
 			TabButton.Shadow.Visible = false
 		end
@@ -1185,7 +1185,7 @@ function XLibrary:CreateWindow(Settings)
 			TweenService:Create(TabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0.2}):Play()
 			TweenService:Create(TabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0.2}):Play()
 			TweenService:Create(TabButton.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
-			
+
 			TweenService:Create(TabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.7}):Play()
 		else
 			FirstTab = Name
@@ -1197,7 +1197,7 @@ function XLibrary:CreateWindow(Settings)
 			TweenService:Create(TabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(TabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 		end
-		
+
 
 		TabButton.Interact.MouseButton1Click:Connect(function()
 			if Minimised then return end
@@ -1335,7 +1335,7 @@ function XLibrary:CreateWindow(Settings)
 			Label.BackgroundTransparency = 1
 			Label.UIStroke.Transparency = 1
 			Label.Title.TextTransparency = 1
-			
+
 			Label.BackgroundColor3 = SelectedTheme.SecondaryElementBackground
 			Label.UIStroke.Color = SelectedTheme.SecondaryElementStroke
 
@@ -1368,10 +1368,10 @@ function XLibrary:CreateWindow(Settings)
 			Paragraph.UIStroke.Transparency = 1
 			Paragraph.Title.TextTransparency = 1
 			Paragraph.Content.TextTransparency = 1
-			
+
 			Paragraph.BackgroundColor3 = SelectedTheme.SecondaryElementBackground
 			Paragraph.UIStroke.Color = SelectedTheme.SecondaryElementStroke
-			
+
 			TweenService:Create(Paragraph, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Paragraph.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 			TweenService:Create(Paragraph.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()	
@@ -1396,7 +1396,7 @@ function XLibrary:CreateWindow(Settings)
 			Input.BackgroundTransparency = 1
 			Input.UIStroke.Transparency = 1
 			Input.Title.TextTransparency = 1
-			
+
 			Input.InputFrame.BackgroundColor3 = SelectedTheme.InputBackground
 			Input.InputFrame.UIStroke.Color = SelectedTheme.InputStroke
 
@@ -1408,8 +1408,8 @@ function XLibrary:CreateWindow(Settings)
 			Input.InputFrame.Size = UDim2.new(0, Input.InputFrame.InputBox.TextBounds.X + 24, 0, 30)
 
 			Input.InputFrame.InputBox.FocusLost:Connect(function()
-				
-				
+
+
 				local Success, Response = pcall(function()
 					InputSettings.Callback(Input.InputFrame.InputBox.Text)
 				end)
@@ -1423,7 +1423,7 @@ function XLibrary:CreateWindow(Settings)
 					TweenService:Create(Input, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 				end
-				
+
 				if InputSettings.RemoveTextAfterFocusLost then
 					Input.InputFrame.InputBox.Text = ""
 				end
@@ -1543,7 +1543,7 @@ function XLibrary:CreateWindow(Settings)
 				DropdownOption.Interact.MouseButton1Click:Connect(function()
 					if Dropdown.Selected.Text ~= Option then
 						Dropdown.Selected.Text = Option
-						
+
 						local Success, Response = pcall(function()
 							DropdownSettings.Callback(Option)
 						end)
@@ -1638,7 +1638,7 @@ function XLibrary:CreateWindow(Settings)
 			Keybind.BackgroundTransparency = 1
 			Keybind.UIStroke.Transparency = 1
 			Keybind.Title.TextTransparency = 1
-			
+
 			Keybind.KeybindFrame.BackgroundColor3 = SelectedTheme.InputBackground
 			Keybind.KeybindFrame.UIStroke.Color = SelectedTheme.InputStroke
 
@@ -1750,7 +1750,7 @@ function XLibrary:CreateWindow(Settings)
 			Toggle.UIStroke.Transparency = 1
 			Toggle.Title.TextTransparency = 1
 			Toggle.Switch.BackgroundColor3 = SelectedTheme.ToggleBackground
-			
+
 			if SelectedTheme ~= XLibrary.Theme.Default then
 				Toggle.Switch.Shadow.Visible = false
 			end
@@ -1809,7 +1809,7 @@ function XLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()		
 				end
-				
+
 				local Success, Response = pcall(function()
 					ToggleSettings.Callback(ToggleSettings.CurrentValue)
 				end)
@@ -1823,7 +1823,7 @@ function XLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 				end
-				
+
 				SaveConfiguration()
 			end)
 
@@ -1894,11 +1894,11 @@ function XLibrary:CreateWindow(Settings)
 			Slider.BackgroundTransparency = 1
 			Slider.UIStroke.Transparency = 1
 			Slider.Title.TextTransparency = 1
-			
+
 			if SelectedTheme ~= XLibrary.Theme.Default then
 				Slider.Main.Shadow.Visible = false
 			end
-			
+
 			Slider.Main.BackgroundColor3 = SelectedTheme.SliderBackground
 			Slider.Main.UIStroke.Color = SelectedTheme.SliderStroke
 			Slider.Main.Progress.BackgroundColor3 = SelectedTheme.SliderProgress
@@ -1923,7 +1923,7 @@ function XLibrary:CreateWindow(Settings)
 			Slider.MouseLeave:Connect(function()
 				TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 			end)
-			
+
 			Slider.Main.Interact.InputBegan:Connect(function(Input)
 				if Input.UserInputType == Enum.UserInputType.MouseButton1 then 
 					Dragging = true 
@@ -1985,7 +1985,7 @@ function XLibrary:CreateWindow(Settings)
 								TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 								TweenService:Create(Slider.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
 							end
-							
+
 							SliderSettings.CurrentValue = NewValue
 							SaveConfiguration()
 						end
@@ -2060,35 +2060,35 @@ function XLibrary:CreateWindow(Settings)
 	wait(0.1)
 	TweenService:Create(Topbar.Hide, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0.8}):Play()
 	wait(0.3)
-	
+
 	return Window
 end
 
 function XLibrary:Destroy()
-    XInterface:Destroy()
+	XInterface:Destroy()
 end
 
 Topbar.ChangeSize.MouseButton1Click:Connect(function()
-    if Debounce then return end
-    if Minimised then
-        Minimised = false
-        Maximise()
-    else
-        Minimised = true
-        Minimise()
-    end
+	if Debounce then return end
+	if Minimised then
+		Minimised = false
+		Maximise()
+	else
+		Minimised = true
+		Minimise()
+	end
 end)
 
 Topbar.Hide.MouseButton1Click:Connect(function()
-    if Debounce then return end
-    if Hidden then
-        Hidden = false
-        Minimised = false
-        Unhide()
-    else
-        Hidden = true
-        Hide()
-    end
+	if Debounce then return end
+	if Hidden then
+		Hidden = false
+		Minimised = false
+		Unhide()
+	else
+		Hidden = true
+		Hide()
+	end
 end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
@@ -2121,7 +2121,7 @@ for _, TopbarButton in ipairs(Topbar:GetChildren()) do
 end
 
 function XLibrary:LoadConfiguration()
-    if CEnabled then
+	if CEnabled then
 		pcall(function()
 			if isfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension) then
 				LoadConfiguration(readfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension))
